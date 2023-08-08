@@ -4,6 +4,7 @@ using Microsoft.OpenApi.Models;
 using Movie_App.Repository;
 using Movie_App.Service;
 using Newtonsoft.Json.Serialization;
+using Serilog;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,6 +37,7 @@ builder.Services.AddAuthentication(x =>
     };
 
 });
+
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -77,7 +79,8 @@ builder.Services.AddControllers();
         
 
 var app = builder.Build();
-
+var loggerFactory = app.Services.GetService<ILoggerFactory>();
+loggerFactory.AddFile(builder.Configuration["Logging:LogFilePath"].ToString());
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

@@ -1,0 +1,7 @@
+2023-07-06T17:12:46.5318084+05:30  [INF] Now listening on: "https://localhost:7042" (d826f4b8)
+2023-07-06T17:12:46.5431045+05:30  [INF] Now listening on: "http://localhost:5095" (d826f4b8)
+2023-07-06T17:12:46.5596224+05:30  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2023-07-06T17:12:46.5651861+05:30  [INF] Hosting environment: "Development" (c3307c92)
+2023-07-06T17:12:46.5690155+05:30  [INF] Content root path: "C:\Users\2064860\source\repos\Movie App\Movie App\" (b5d60022)
+2023-07-06T17:14:31.0697915+05:30 0HMRU2OF6UVBE:00000003 [INF] Getting All movies (edf361bd)
+2023-07-06T17:14:31.2999141+05:30 0HMRU2OF6UVBE:00000003 [INF] Movie found (db8ce898)
