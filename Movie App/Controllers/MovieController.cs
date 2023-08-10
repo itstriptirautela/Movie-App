@@ -42,9 +42,9 @@ namespace Movie_Api.Controllers
             }
         }
 
-        
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddMovie")]
-        //[Authorize(Roles = "Admin")]
+       
         public IActionResult AddMovie([FromBody] Movies movie) //userobj coming from ui
         {
 
@@ -90,9 +90,11 @@ namespace Movie_Api.Controllers
             }
         }
 
+        [Authorize(Roles = "Admin")]
+
         [HttpDelete("delete")]
-        //[Authorize(Roles = "Admin")]
-        // [Authorize]
+        
+      
         public async Task<ActionResult<string>> DeleteMovie(string movieName)
         {
             try

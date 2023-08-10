@@ -29,7 +29,7 @@ namespace Movie_App.Service
                 var claims = new List<Claim>
                 {
                     new Claim(JwtRegisteredClaimNames.NameId, user.LoginId),
-                new Claim(ClaimTypes.Role ,user.role),
+                new Claim(ClaimTypes.Role ,user.Roles),
                 };
 
                 var creds = new SigningCredentials(_Key, SecurityAlgorithms.HmacSha512Signature);

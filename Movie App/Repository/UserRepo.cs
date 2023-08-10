@@ -67,7 +67,7 @@ namespace Movie_App.Repository
                         lastName = user.lastName,
                         email = user.email,
                         contactNumber = user.contactNumber,
-                        role = user.role,
+                        role = user.Roles,
                         token = _tokenService.CreateToken(user)
                     };
                 }

@@ -32,7 +32,7 @@ namespace Movie_App.Model
 
         [Required(ErrorMessage = "role")]
       
-        public string role { get; set; }
+        public string Roles { get; set; }
 
     }
 }
