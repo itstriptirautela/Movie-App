@@ -94,7 +94,8 @@ namespace Movie_App.Repository
                 contactNumber = registerDto.contactNumber,
                 email = registerDto.email,
                 password = registerDto.password,
-                confirmPassword = registerDto.confirmPassword
+                confirmPassword = registerDto.confirmPassword,
+                Roles = registerDto.Roles
             };
             await _usersCollection.InsertOneAsync(user);
 
@@ -107,6 +108,7 @@ namespace Movie_App.Repository
                 contactNumber = user.contactNumber,
                // token = _tokenService.CreateToken(user),
                 LoginId = registerDto.LoginId,
+                 Roles = registerDto.Roles
             };
         }
         public async Task<string> ForgotPassword(string LoginId, ForgotPasswordDto forgotPasswordDto)
