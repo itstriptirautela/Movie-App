@@ -69,6 +69,7 @@ namespace Movie_App.Repository
                         contactNumber = user.contactNumber,
                         role = user.Roles,
                         token = _tokenService.CreateToken(user)
+
                     };
                 }
                 else{
@@ -94,7 +95,8 @@ namespace Movie_App.Repository
                 contactNumber = registerDto.contactNumber,
                 email = registerDto.email,
                 password = registerDto.password,
-                confirmPassword = registerDto.confirmPassword
+                confirmPassword = registerDto.confirmPassword,
+                Roles = registerDto.Roles
             };
             await _usersCollection.InsertOneAsync(user);
 
@@ -107,6 +109,7 @@ namespace Movie_App.Repository
                 contactNumber = user.contactNumber,
                // token = _tokenService.CreateToken(user),
                 LoginId = registerDto.LoginId,
+                 Roles = registerDto.Roles
             };
         }
         public async Task<string> ForgotPassword(string LoginId, ForgotPasswordDto forgotPasswordDto)
@@ -131,17 +134,23 @@ namespace Movie_App.Repository
         public async Task<User> GetUserByExactUsername(string LoginId)
         {
             var user = await _usersCollection.Find(u => u.LoginId == LoginId).FirstOrDefaultAsync();
-
-            var userSearchDto = new User
+            if (user != null)
             {
-                Id= user.Id,
-                LoginId = user.LoginId,
-                firstName = user.firstName,
-                lastName = user.lastName,
-                contactNumber = user.contactNumber,
-                email = user.email
-            };
-            return userSearchDto;
+                return new User
+                {
+                    Id = user.Id,
+                    LoginId = user.LoginId,
+                    firstName = user.firstName,
+                    lastName = user.lastName,
+                    contactNumber = user.contactNumber,
+                    email = user.email
+                };
+            }
+            else
+            {
+                return null;
+            }
+            
         }
     }
 }

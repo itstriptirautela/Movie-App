@@ -90,7 +90,7 @@ namespace Movie_Api.Controllers
             }
         }
 
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
 
         [HttpDelete("delete")]
         

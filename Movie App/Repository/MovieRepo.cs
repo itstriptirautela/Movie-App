@@ -38,6 +38,7 @@ namespace Movie_App.Repository
                     TotalTicketsAllotted = u.TotalTicketsAllotted,
                     BookedTickets = u.BookedTickets,
                     Status= u.Status,
+                    ticketPrice = u.ticketPrice,
                   
                 }).ToList();
 

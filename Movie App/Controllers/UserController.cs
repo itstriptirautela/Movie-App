@@ -96,7 +96,7 @@ namespace Movie.WebApi.Controllers
                 {
                     return BadRequest("User not found");
                 }
-                return Ok(new { Response = response });
+                return Ok(new {  response });
             }
             catch (Exception e)
             {

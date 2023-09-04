@@ -19,6 +19,7 @@ namespace Movie_App.Model
         public int BookedTickets { get;set; }
 
         public string Status { get; set; }
+        public int ticketPrice { get; set; }
 
     }
 }
